@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <!-- Open Graph Tags -->
+    
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+
+
+    <title>Chris - IT Instructor</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: JetBrains Mono & Inter -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                DEFAULT: '#B3D6E6',
+                50: '#F0F7FA',
+                100: '#E1F0F6',
+                200: '#C7E4F0',
+                300: '#B3D6E6',
+                400: '#89BDD6',
+                500: '#5F9EC2',
+                600: '#427F9F',
+                700: '#326078',
+                800: '#234455',
+                900: '#152A35',
+                950: '#0C1920'
+              },
+              tech: {
+                bg: '#0F172A',
+                card: '#1E293B',
+                border: '#334155',
+                text: '#94A3B8',
+                glow: 'rgba(179, 214, 230, 0.15)'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['"Fira Code"', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Subtle tech grid background */
+      .bg-grid-pattern {
+        background-size: 36px 36px;
+        background-image:
+          linear-gradient(to right, rgba(179, 214, 230, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(179, 214, 230, 0.05) 1px, transparent 1px);
+      }
+
+      .tech-glow {
+        box-shadow: 0 0 25px -5px rgba(179, 214, 230, 0.25);
+      }
+    </style>
+  </head>
+  <body class="bg-[#0b1120] text-slate-100 font-sans antialiased selection:bg-[#B3D6E6] selection:text-slate-900 bg-grid-pattern min-h-screen flex flex-col">
+    <!-- ========================================== -->
+    <!-- NAVIGATION SECTION                         -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0b1120]/85 border-b border-slate-800/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <!-- EDIT: NAVBAR_BRAND -->
+        <a class="flex items-center gap-2 text-[#B3D6E6] font-mono font-bold text-lg tracking-tight hover:opacity-90 transition" href="#hero">
+          <i class="w-5 h-5 text-[#B3D6E6]" data-lucide="terminal"></i>
+          <span>FCBPortfolio</span>
+        </a>
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium font-mono text-slate-300">
+          <a class="hover:text-[#B3D6E6] transition flex items-center gap-1.5" href="#about">
+            <i class="w-4 h-4 text-slate-400" data-lucide="user"></i>
+            <span>About</span>
+          </a>
+          <a class="hover:text-[#B3D6E6] transition flex items-center gap-1.5" href="#projects">
+            <i class="w-4 h-4 text-slate-400" data-lucide="folder-git-2"></i>
+            <span>Work Samples</span>
+          </a>
+          <a class="hover:text-[#B3D6E6] transition flex items-center gap-1.5" href="#skills">
+            <i class="w-4 h-4 text-slate-400" data-lucide="cpu"></i>
+            <span>Skills &amp; Tools</span>
+          </a>
+          <a class="hover:text-[#B3D6E6] transition flex items-center gap-1.5" href="#contact">
+            <i class="w-4 h-4 text-slate-400" data-lucide="send"></i>
+            <span>Contact</span>
+          </a>
+        </nav>
+        <!-- Mobile Menu Toggle Button -->
+        <div class="md:hidden flex items-center">
+          <button aria-label="Toggle navigation" class="text-slate-300 hover:text-[#B3D6E6] p-2 focus:outline-none" id="mobile-menu-btn" type="button">
+            <i class="w-6 h-6" data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Navigation Drawer -->
+      <div class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-[#0F172A] border-b border-slate-800 font-mono text-sm" id="mobile-menu">
+        <a class="block px-3 py-2 rounded text-slate-300 hover:text-[#B3D6E6] hover:bg-slate-800/60" href="#about">About</a>
+        <a class="block px-3 py-2 rounded text-slate-300 hover:text-[#B3D6E6] hover:bg-slate-800/60" href="#projects">Work Samples</a>
+        <a class="block px-3 py-2 rounded text-slate-300 hover:text-[#B3D6E6] hover:bg-slate-800/60" href="#skills">Skills &amp; Tools</a>
+        <a class="block px-3 py-2 rounded text-slate-300 hover:text-[#B3D6E6] hover:bg-slate-800/60" href="#contact">Contact</a>
+      </div>
+    </header>
+    <main class="flex-grow">
+      <!-- ========================================== -->
+      <!-- LANDING / HERO SECTION                    -->
+      <!-- ========================================== -->
+      <section class="relative pt-20 pb-24 md:pt-32 md:pb-36 border-b border-slate-800/60" id="hero">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+            <!-- Hero Text Content -->
+            <div class="flex-1 text-center md:text-left space-y-5">
+              <!-- Decorative Profession Label & Icon -->
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs font-mono text-[#B3D6E6]">
+                <i class="w-3.5 h-3.5 text-[#B3D6E6]" data-lucide="binary"></i>
+                <span>IT Instructor Portfolio</span>
+              </div>
+              <!-- EDIT: HERO_NAME -->
+              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white font-mono">Christopher Mortel</h1>
+              <!-- EDIT: HERO_JOB_TITLE -->
+              <h2 class="text-xl sm:text-2xl font-semibold text-[#B3D6E6] font-mono">IT Instructor</h2>
+              <!-- EDIT: HERO_INTRODUCTION -->
+              <p class="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed">I’m an IT Instructor and web development professional with a background in education and hands-on experience in teaching programming and web development. I specialize in helping learners build practical skills in JavaScript, Node.js, Express.js, React.js, MongoDB, Python, and SQL.</p>
+              <!-- Only allowed CTA in Hero: button linked to projects section -->
+              <div class="pt-3">
+                <a class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#B3D6E6] text-slate-950 font-semibold font-mono text-sm shadow-md hover:bg-[#89BDD6] transition-all duration-200" href="#projects">
+                  <span>View Work Samples</span>
+                  <i class="w-4 h-4" data-lucide="arrow-down"></i>
+                </a>
+              </div>
+            </div>
+            <!-- Hero Profile Image -->
+            <div class="flex-shrink-0 relative">
+              <div class="w-48 h-48 sm:w-60 sm:h-60 rounded-2xl p-1 bg-gradient-to-tr from-[#B3D6E6]/40 via-slate-700 to-[#B3D6E6]/10 tech-glow">
+                <!-- EDIT: PROFILE_IMAGE -->
+                <img alt="Profile image" class="w-full h-full object-cover rounded-xl border border-slate-700 bg-slate-900" src="./profile.JPG" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- ABOUT SECTION                              -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-slate-800/60 bg-slate-900/40" id="about">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-3 mb-8">
+            <i class="w-6 h-6 text-[#B3D6E6]" data-lucide="code-2"></i>
+            <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">About</h2>
+          </div>
+          <div class="p-8 rounded-xl bg-slate-900/80 border border-slate-800 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 left-0 h-1 w-24 bg-[#B3D6E6]"></div>
+            <!-- EDIT: ABOUT_TEXT -->
+            <p class="text-slate-300 text-lg leading-relaxed">I’m an IT Instructor with a background in education and web development. I enjoy teaching and mentoring aspiring developers, helping them understand technical concepts and apply them to practical projects. My technical experience includes JavaScript, Node.js, Express.js, React.js, MongoDB, Python, and SQL.
+
+            Beyond teaching, I’m passionate about continuous learning and improving my skills in technology. I aim to create meaningful learning experiences while continuously growing as an IT professional and developer.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- PROJECTS / WORK SAMPLES SECTION            -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-slate-800/60" id="projects">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-3 mb-10">
+            <i class="w-6 h-6 text-[#B3D6E6]" data-lucide="layers"></i>
+            <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">Work Samples</h2>
+          </div>
+          <!-- Exactly 3 Reusable Project Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <div class="flex flex-col bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden hover:border-[#B3D6E6]/50 transition duration-300">
+              <div class="aspect-video w-full bg-slate-800 overflow-hidden relative">
+                <!-- EDIT: PROJECT_1_IMAGE -->
+                <img alt="Project image" class="w-full h-full object-cover" src="https://www.graduateprogram.org/wp-content/uploads/2020/02/Feb.-21-Curriculum-Writing-and-Team-Planning_web.jpg" />
+              </div>
+              <div class="p-6 flex flex-col flex-grow space-y-4">
+                <!-- EDIT: PROJECT_1_TITLE -->
+                <h3 class="text-xl font-bold text-white font-mono">Curriculum Planning</h3>
+                <!-- EDIT: PROJECT_1_DESCRIPTION -->
+                <p class="text-slate-400 text-sm flex-grow leading-relaxed"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_1_LINK -->
+                  <a class="inline-flex items-center gap-2 text-sm font-mono font-medium text-[#B3D6E6] hover:underline" href="#">
+                    <span>Project Link</span>
+                    <i class="w-4 h-4" data-lucide="external-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="flex flex-col bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden hover:border-[#B3D6E6]/50 transition duration-300">
+              <div class="aspect-video w-full bg-slate-800 overflow-hidden relative">
+                <!-- EDIT: PROJECT_2_IMAGE -->
+                <img alt="Project image" class="w-full h-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW2phQh_DfeeoYXxCOGM7XEPJujftIDapfnkizMIoUCWV_MTi9J6SAKSJ8&s=10" />
+              </div>
+              <div class="p-6 flex flex-col flex-grow space-y-4">
+                <!-- EDIT: PROJECT_2_TITLE -->
+                <h3 class="text-xl font-bold text-white font-mono">Database System</h3>
+                <!-- EDIT: PROJECT_2_DESCRIPTION -->
+                <p class="text-slate-400 text-sm flex-grow leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. </p>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_2_LINK -->
+                  <a class="inline-flex items-center gap-2 text-sm font-mono font-medium text-[#B3D6E6] hover:underline" href="#">
+                    <span>Project Link</span>
+                    <i class="w-4 h-4" data-lucide="external-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 3 -->
+            <div class="flex flex-col bg-slate-900/80 border border-slate-800 rounded-xl overflow-hidden hover:border-[#B3D6E6]/50 transition duration-300">
+              <div class="aspect-video w-full bg-slate-800 overflow-hidden relative">
+                <!-- EDIT: PROJECT_3_IMAGE -->
+                <img alt="Project image" class="w-full h-full object-cover" src="https://thumbs.dreamstime.com/b/modern-cartoon-illustrations-isolated-software-development-tools-347689960.jpg" />
+              </div>
+              <div class="p-6 flex flex-col flex-grow space-y-4">
+                <!-- EDIT: PROJECT_3_TITLE -->
+                <h3 class="text-xl font-bold text-white font-mono">Application System</h3>
+                <!-- EDIT: PROJECT_3_DESCRIPTION -->
+                <p class="text-slate-400 text-sm flex-grow leading-relaxed">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_3_LINK -->
+                  <a class="inline-flex items-center gap-2 text-sm font-mono font-medium text-[#B3D6E6] hover:underline" href="#">
+                    <span>Project Link</span>
+                    <i class="w-4 h-4" data-lucide="external-link"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- SKILLS / TOOLS SECTION                     -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-slate-800/60 bg-slate-900/40" id="skills">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-3 mb-10">
+            <i class="w-6 h-6 text-[#B3D6E6]" data-lucide="boxes"></i>
+            <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">Skills &amp; Tools</h2>
+          </div>
+          <!-- Exactly 2 Reusable Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1: Skills -->
+            <div class="p-8 rounded-xl bg-slate-900/80 border border-slate-800 relative">
+              <div class="flex items-center gap-3 pb-6 mb-6 border-b border-slate-800">
+                <i class="w-6 h-6 text-[#B3D6E6]" data-lucide="code"></i>
+                <h3 class="text-xl font-bold font-mono text-white">Skills</h3>
+              </div>
+              <!-- EDIT: SKILLS_LIST -->
+              <ul class="space-y-3 font-mono text-slate-300">
+                <!-- EDIT: SKILL_ITEM_1 -->
+                <li class="flex items-center gap-3">
+                  <i class="w-4 h-4 text-[#B3D6E6] flex-shrink-0" data-lucide="chevron-right"></i>
+                  <span>Web Development</span>
+                </li>
+                <!-- EDIT: SKILL_ITEM_2 -->
+                <li class="flex items-center gap-3">
+                  <i class="w-4 h-4 text-[#B3D6E6] flex-shrink-0" data-lucide="chevron-right"></i>
+                  <span>Programming Fundamentals </span>
+                </li>
+                <!-- EDIT: SKILL_ITEM_3 -->
+                <li class="flex items-center gap-3">
+                  <i class="w-4 h-4 text-[#B3D6E6] flex-shrink-0" data-lucide="chevron-right"></i>
+                  <span>Technical Instruction and Mentoring</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Card 2: Tools / Technologies -->
+            <div class="p-8 rounded-xl bg-slate-900/80 border border-slate-800 relative">
+              <div class="flex items-center gap-3 pb-6 mb-6 border-b border-slate-800">
+                <i class="w-6 h-6 text-[#B3D6E6]" data-lucide="wrench"></i>
+                <h3 class="text-xl font-bold font-mono text-white">Tools / Technologies</h3>
+              </div>
+              <!-- EDIT: TOOLS_LIST -->
+              <ul class="space-y-3 font-mono text-slate-300">
+                <!-- EDIT: TOOL_ITEM_1 -->
+                <li class="flex items-center gap-3">
+                  <i class="w-4 h-4 text-[#B3D6E6] flex-shrink-0" data-lucide="terminal"></i>
+                  <span>MERN Stack</span>
+                </li>
+                <!-- EDIT: TOOL_ITEM_2 -->
+                <li class="flex items-center gap-3">
+                  <i class="w-4 h-4 text-[#B3D6E6] flex-shrink-0" data-lucide="terminal"></i>
+                  <span>MEVN Stack</span>
+                </li>
+                <!-- EDIT: TOOL_ITEM_3 -->
+                <li class="flex items-center gap-3">
+                  <i class="w-4 h-4 text-[#B3D6E6] flex-shrink-0" data-lucide="terminal"></i>
+                  <span>Git, Github</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- CONTACT SECTION                            -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-slate-800/60" id="contact">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center gap-3 mb-10">
+            <i class="w-6 h-6 text-[#B3D6E6]" data-lucide="message-square"></i>
+            <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white tracking-tight">Contact</h2>
+          </div>
+          <div class="p-8 rounded-xl bg-slate-900/80 border border-slate-800 space-y-6">
+            <!-- Email Entry -->
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-[#B3D6E6] flex-shrink-0">
+                <i class="w-5 h-5" data-lucide="mail"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-slate-400 block">Email</span>
+                <!-- EDIT: CONTACT_EMAIL -->
+                <span class="text-slate-200 font-mono text-base">christopher.mortel@tuitt.com</span>
+              </div>
+            </div>
+            <!-- Contact Information Entry -->
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-[#B3D6E6] flex-shrink-0">
+                <i class="w-5 h-5" data-lucide="phone"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-slate-400 block">Contact Information</span>
+                <!-- EDIT: CONTACT_INFO -->
+                <span class="text-slate-200 font-mono text-base">+639123648564</span>
+              </div>
+            </div>
+            <!-- Social Link Entry -->
+            <div class="flex items-center gap-4">
+              <div class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-[#B3D6E6] flex-shrink-0">
+                <i class="w-5 h-5" data-lucide="share-2"></i>
+              </div>
+              <div>
+                <span class="text-xs font-mono text-slate-400 block">Social Link</span>
+                <!-- EDIT: CONTACT_SOCIAL_LINK -->
+                <a class="text-[#B3D6E6] font-mono text-base hover:underline flex items-center gap-1.5" href="https://www.linkedin.com/in/christopher-mortel-4836b2171/?isSelfProfile=true">
+                  <span>LinkedIn Profile</span>
+                  <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ========================================== -->
+    <!-- FOOTER SECTION                             -->
+    <!-- ========================================== -->
+    <footer class="py-8 bg-[#0b1120] border-t border-slate-800/80 font-mono text-xs text-slate-400">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2 text-slate-400">
+          <i class="w-4 h-4 text-[#B3D6E6]" data-lucide="terminal"></i>
+          <!-- EDIT: FOOTER_BRAND -->
+          <span>FCBPortfolio</span>
+        </div>
+        <div>
+          <span>© <span id="current-year"></span> FCBPortfolio. All rights reserved. </span>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+      // Mobile nav toggle
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+      // Set dynamic copyright year
+      document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
